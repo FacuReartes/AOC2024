@@ -8,24 +8,18 @@ for (let line = 0; line < input.length; line++) {
 
     if (input[line][i] === 'A') {
 
-      let diagonals = 0;
-
       let leftUp = input[line + 1]?.[i - 1];
       let rightUp = input[line + 1]?.[i + 1];
       let leftDown = input[line - 1]?.[i - 1];
       let rightDown = input[line - 1]?.[i + 1];
 
       if (
-        (leftUp === 'M') && (rightDown === 'S') || 
-        (leftUp === 'S') && (rightDown === 'M')
-      ) diagonals += 1;
+        ((leftUp === 'M') && (rightDown === 'S') || 
+        (leftUp === 'S') && (rightDown === 'M')) &&
+        ((rightUp === 'M') && (leftDown === 'S') || 
+        (rightUp === 'S') && (leftDown === 'M'))
+      ) total += 1;
 
-      if (
-        (rightUp === 'M') && (leftDown === 'S') || 
-        (rightUp === 'S') && (leftDown === 'M')
-      ) diagonals += 1;
-
-      if (diagonals === 2) total += 1;
     };
   };
 };

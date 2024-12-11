@@ -1,9 +1,27 @@
-// IMPROVE THIS CODE
 const { input } = require('./input');
 
-let total = 0
+let total = 0;
 
-let overlappedAntis = new Set()
+let overlappedAntis = new Set();
+
+const handleCell = (y, x, dx, dy) => {
+
+  const targetY = y + dy;
+  const targetX = x + dx;
+
+  if ( input[targetY]?.[targetX] && input[targetY][targetX] !== '#') {
+
+    if (input[targetY][targetX] === '.') {
+
+      input[targetY][targetX] = '#';
+      total++;
+    } else {
+
+      if (!overlappedAntis.has(`${targetY}:${targetX}`)) total++
+      overlappedAntis.add(`${targetY}:${targetX}`);
+    };
+  };
+};
 
 const searchAnti = (x, y, node) => {
 
@@ -16,36 +34,14 @@ const searchAnti = (x, y, node) => {
         const dx = newX - x;
         const dy = newY - y;
 
-        if ( input[newY + dy]?.[newX + dx] && input[newY + dy][newX + dx] !== '#') {
+        handleCell(newY, newX, dx, dy);
 
-          if (input[newY + dy][newX + dx] === '.') {
+        handleCell(y, x, -dx, -dy);
 
-            input[newY + dy][newX + dx] = '#';
-            total++
-          } else {
-
-            if (!overlappedAntis.has(`${newY + dy}:${newX + dx}`)) total++
-            overlappedAntis.add(`${newY + dy}:${newX + dx}`)
-          }
-        }
-
-        if ( input[y - dy]?.[x - dx] && input[y - dy][x - dx] !== '#') {
-
-          if (input[y - dy][x - dx] === '.'){
-            
-            input[y - dy][x - dx] = '#';
-            total++
-          } else {
-
-            if (!overlappedAntis.has(`${y - dy}:${x - dx}`)) total++
-            overlappedAntis.add(`${y - dy}:${x - dx}`)
-          }
-        }
-      }
-    }
-  }
-
-}
+      };
+    };
+  };
+};
 
 for (let y = 0; y < input.length; y++) {
 
@@ -53,10 +49,10 @@ for (let y = 0; y < input.length; y++) {
 
     if (input[y][x] !== '.' && input[y][x] !== '#') {
 
-      searchAnti(x, y, input[y][x])
+      searchAnti(x, y, input[y][x]);
 
-    }
-  }
-}
+    };
+  };
+};
 
-console.log(total)
+console.log(total);

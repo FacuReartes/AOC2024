@@ -3,7 +3,7 @@
 [Advent of code](https://adventofcode.com/)
 
 Advent of Code is an Advent calendar of small programming puzzles for a variety of skill levels that can be solved in any programming language you like.   
-⭐ Earned = 25
+⭐ Earned = 26
 
 | Date  | Problem                                                              | Part One | Part Two | Solution                                                           |
 | :---- | :------------------------------------------------------------------- | :------- | :------- | :----------------------------------------------------------------- |
@@ -21,7 +21,7 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 | 12/12 | [Day 12 - Garden Groups](https://adventofcode.com/2024/day/12)       |    ✅    |    ✅   | [Solution](https://github.com/FacuReartes/AOC2024/tree/main/day12) |
 | 12/13 | [Day 13 - Claw Contraption](https://adventofcode.com/2024/day/13)    |    ✅    |    ✅   | [Solution](https://github.com/FacuReartes/AOC2024/tree/main/day13) |
 | 12/14 | [Day 14 - Restroom Redoubt](https://adventofcode.com/2024/day/14)    |    ✅    |    ✅   | [Solution](https://github.com/FacuReartes/AOC2024/tree/main/day14) |
-| 12/15 |                                                                      |           |         |                                                                    |
+| 12/15 | [Day 15 - Warehouse Woes](https://adventofcode.com/2024/day/15)      |    ✅    |         | [Solution](https://github.com/FacuReartes/AOC2024/tree/main/day15) |
 | 12/16 |                                                                      |           |         |                                                                    |
 | 12/17 |                                                                      |           |         |                                                                    |
 | 12/18 |                                                                      |           |         |                                                                    |
